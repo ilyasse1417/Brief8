@@ -1,14 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/40e3d86917.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
     <title>Product Shop</title>
 </head>
+
 <body>
-    
+    <header>
+        <h2>Cosmetica</h2>
+    </header>
+
+    <main>
+        <button id="ajouter" type="button">Ajouter un produit</button>
+        <div id="produits">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marque</th>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Date de publication</th>
+                        <th>Type</th>
+                        <th>En promotion</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                        <th>Détails</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+        </div>
+        <div id="popup">
+            <form action="popup">
+                <div class="input-control">
+                    <label>Marque</label>
+                    <input id="marqueInput" type="text">
+                    <div class="error">
+                        <p id="marqueInputError">Veuillez saisir une marque valide. (Lettres min 2 - max 30)</p>
+                    </div>
+                </div>
+
+                <div class="input-control">
+                    <label>Nom</label>
+                    <input id="nomInput" type="text">
+                    <div class="error">
+                        <p id="nomInputError">Veuillez saisir un nom valide. (Lettres min 2 - max 30)</p>
+                    </div>
+                </div>
+
+                <div class="input-control">
+                    <label>Prix</label>
+                    <input id="prixInput" type="number">
+                    <div class="error">
+                        <p id="prixInputError">Veuillez saisir un prix valide. (Ex : 250.50)</p>
+                    </div>
+                </div>
+
+                <div class="input-control">
+                    <label>Date de production</label>
+                    <input id="dateInput" type="date">
+                    <div class="error">
+                        <p id="dateInputError">Veuillez saisir une date valide.</p>
+                    </div>
+                </div>
+
+                <div class="input-control">
+                    <label>Type</label>
+                    <select name="type" id="typeInput">
+                        <option>Hygiène et toilette</option>
+                        <option>Soins esthétiques</option>
+                        <option>Produits solaires</option>
+                        <option>Produits de maquillage</option>
+                        <option>Beauté des mains et des pieds</option>
+                        <option>Entretien capillaires</option>
+                        <option>Parfums</option>
+                    </select>
+                </div>
+
+                <div class="input-control">
+                    <label style="margin-bottom: 20px;">En promotion</label>
+                </div>
+                    <input name="promotion" type="radio" value="oui" checked><span class="promotion"> oui<br></span>
+                    <input name="promotion" type="radio" value="non"><span class="promotion"> non<br></span>
+                    <p id="promotionError">Veuillez cocher une case.</p>
+
+                <button id="valider" type="button">Valider</button>
+                <div id="save_edit">
+                    
+                </div>
+                <button id="closeButton" type="button"><i id="close" class="fa-solid fa-xmark"></i></button>
+            </form>
+        </div>
+        <div id="details">
+            <form id="articleDetails">
+                <label for="Marque">
+                    Marque : <input type="text" id="marqueDetail" disabled>
+                </label><br>
+                <label for="Nom">
+                    Nom : <input type="text" id="nomDetail" disabled>
+                </label><br>
+                <label for="Prix">
+                    Prix : <input type="text" id="prixDetail" disabled>
+                </label><br>
+                <label for="DateDePublication">
+                    Date de publicitation : <input type="text" id="dateDetail" disabled>
+                </label><br>
+                <label for="Type">
+                    Type : <input type="text" id="typeDetail" disabled>
+                </label><br>
+                <label for="EnPromotion">
+                    En promotion : <input type="text" id="promotionDetail" disabled>
+                </label>
+                <button id="detailsCloseButton" type="button"><i id="close" class="fa-solid fa-xmark"></i></button>
+            </form>
+        </div>
+    </main>
+
 </body>
+
 </html>
